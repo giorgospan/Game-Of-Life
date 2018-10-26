@@ -6,3 +6,5 @@ This project was part of my "Parallel Systems" course during Fall semester 2016.
 
 MPI and OpenMP are being used to achieve parallelism.
 
+*Note:* "machines" file contains a list with entries of type: <machine_name>:<number_of_cores>
+
