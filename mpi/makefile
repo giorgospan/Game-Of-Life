@@ -2,9 +2,9 @@ OBJS	= main.o game.o functions.o
 SOURCE	= main.c game.c functions.c
 HEADERS	= game.h functions.h
 
-OUT		= gameoflife
+OUT	= gameoflife
 
-CC 		= mpicc
+CC 	= mpicc
 FLAGS 	= -g -c
 
 
