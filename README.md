@@ -9,4 +9,4 @@ MPI and OpenMP are being used to achieve parallelism.
 "machines" file contains a list with entries of the following type: *<machine_name>:<number_of_cores_to_be_used>*
 
 Run command:
-  * 
+  * mpiexec \[-n \<NoPROCESSES>] \[-f \<machine_file>] ./gameoflife -n \<ROWS> -m \<COLUMNS> -max \<MAX_GENS> \[-f \<inputfile>]
