@@ -15,4 +15,4 @@ Run MPI only version:
 Run MPI+OpenMP version:
   * mpiexec \[-n \<NoPROCESSES>] \[-f \<machine_file>] ./gol -n \<ROWS> -m \<COLUMNS> -max \<MAX_GENS> -t \<threads> \[-f \<inputfile>]
 
-In case input file is not given, matrix is filled randomly.
+In case input file is not given, matrix will be filled randomly.
