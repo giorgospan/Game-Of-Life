@@ -5,6 +5,4 @@
 extern char** local_matrix;
 extern int local_N;
 extern int local_M;
-
-
 #endif
