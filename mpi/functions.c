@@ -14,7 +14,7 @@ char** allocate_memory(int rows,int columns)
     char** arr = malloc(rows*sizeof(char *));
     for (i=0; i<rows; i++)
         arr[i] = &(data[i*columns]);
-	
+
 	return arr;
 }
 
@@ -40,11 +40,11 @@ void calculate_rows_columns(int* num_rows,int* num_cols,int size,int ROWS,int CO
 
 void calculate_disp(int* disps,int* num_rows,int* num_cols,int COLS,int NPROWS,int NPCOLS)
 {
-	
+
 	int i,j;
-	
+
 	for (i=0; i<NPROWS; i++)
-		for (j=0; j<NPCOLS; j++) 
+		for (j=0; j<NPCOLS; j++)
 			if (j == 0)
 			{
 				int row;
@@ -55,7 +55,7 @@ void calculate_disp(int* disps,int* num_rows,int* num_cols,int COLS,int NPROWS,i
 					disps[i*NPCOLS+j] +=  (COLS+1)*num_rows[i*NPCOLS+j - row*NPCOLS];
 				}
 			}
-			else 
+			else
 				/*Just add num_cols of the left process to its displacement*/
 				disps[i*NPCOLS+j] = disps[i*NPCOLS+j - 1] + num_cols[i*NPCOLS+j - 1];
 }
@@ -63,17 +63,17 @@ void calculate_disp(int* disps,int* num_rows,int* num_cols,int COLS,int NPROWS,i
 void calculate_extent(int* extent,int* num_cols,int NPROWS,int NPCOLS)
 {
 	int i,j;
-	
+
 	for (i=0; i<NPROWS; i++)
 		for (j=0; j<NPCOLS; j++)
 		{
 			int current = i*NPCOLS+j;
 			int block;
-			
+
 			/*Add newline to the extent*/
 			/*Add num_cols of this process*/
 			extent[current] = 1 + num_cols[current];
-			
+
 			/*For all blocks on the left of me*/
 			for(block =i*NPCOLS ;block<current;block++)
 				extent[current] += num_cols[block];
@@ -87,16 +87,16 @@ void calculate_extent(int* extent,int* num_cols,int NPROWS,int NPCOLS)
 
 void read_file(char* filename,int local_disp,int local_extent,int rank)
 {
-	
+
 	MPI_File fh;
 	int i,j,error;
-	
+
 	/*Open the file*/
-	MPI_Errhandler_set(MPI_COMM_WORLD, MPI_ERRORS_RETURN);
+	MPI_Comm_set_errhandler(MPI_COMM_WORLD, MPI_ERRORS_RETURN);
 	error = MPI_File_open(MPI_COMM_WORLD,filename,MPI_MODE_RDONLY,MPI_INFO_NULL,&fh);
-	
-	
-	if (error!= MPI_SUCCESS) 
+
+
+	if (error!= MPI_SUCCESS)
 	{
 		/*Only Process 0 will print the error message */
 		if(rank == 0)
@@ -112,34 +112,34 @@ void read_file(char* filename,int local_disp,int local_extent,int rank)
 		MPI_Finalize();
 		exit(1);
 	}
-	
+
 	int lb=0;
 	int count;
 	int buffsize = local_N*local_M;
 	char buff[buffsize];
 	MPI_Datatype etype, filetype, contig;
 	etype = MPI_CHAR;
-	
-	
+
+
 	/*Create contiguous datatype of local_M chars*/
 	MPI_Type_contiguous(local_M, MPI_CHAR, &contig);
-	
+
 	/*Extend this datatype*/
 	MPI_Type_create_resized(contig, lb, (MPI_Aint)(local_extent) * sizeof(char), &filetype);
-	
+
 	/*Commit this datatype*/
 	MPI_Type_commit(&filetype);
-	
+
 	/*Each process will now have its own file view*/
 	MPI_File_set_view(fh, (MPI_Offset)(local_disp) * sizeof(char), etype, filetype,"native",MPI_INFO_NULL);
-	
+
 	/*At first we read all local_N*local_M characters in a temp buffer*/
 	MPI_Status status;
-	
+
 	MPI_File_read_all(fh,buff,buffsize,MPI_CHAR,&status);
 	MPI_Get_count( &status, MPI_CHAR, &count );
-	
-	if (count != buffsize) 
+
+	if (count != buffsize)
 	{
 		fprintf( stderr, "Read:%d instead of %d\n", count,buffsize );
 		fflush(stderr);
@@ -157,6 +157,6 @@ void read_file(char* filename,int local_disp,int local_extent,int rank)
 				k++;
 			}
 	}
-	
+
 	MPI_File_close(&fh);
 }
