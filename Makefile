@@ -16,6 +16,7 @@ FLAGS             = -g -O3
 
 # Auxialiary program
 grid:aux/grid
+	@./aux/grid
 aux/grid:aux/grid_creator.o
 	$(CC) -o $@ $^
 
