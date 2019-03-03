@@ -1,7 +1,10 @@
-# ignore object files
+# ignore object files and executable
 
 mpi/*.o
+mpi/gameoflife
 
 mpi_openmp/*.o
+mpi_openmp/gameoflife
 
 aux/*.o
+aux/grid
