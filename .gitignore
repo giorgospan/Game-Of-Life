@@ -1,0 +1,7 @@
+# ignore object files
+
+mpi/*.o
+
+mpi_openmp/*.o
+
+aux/*.o

@@ -1,18 +1,30 @@
 # Game of Life
 
-A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Wikipedia") .
+## About
+A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Wikipedia") . MPI is used in order to leverage the processing power of many machines(nodes) working in parallel. In addition, we incorporate OpenMP directives for parallelization of *for loops*,thus creating a hybrid *MPI+OpenMp* implementation of the game.
 
-This project was part of my "Parallel Systems" course during fall semester 2016.
+## How to run
 
-MPI and OpenMP are being used to achieve parallelism.
+* MPI only :
 
-"machines" file contains a list with entries of the following type: *<machine_name>:<number_of_cores_to_be_used>*
+  `make mpi`
 
-Run MPI only version:
-  * mpiexec \[-n \<NoPROCESSES>] \[-f \<machine_file>] ./gameoflife -n \<ROWS> -m \<COLUMNS> -max \<MAX_GENS> \[-f \<inputfile>]
+  `cd mpi`
 
+  `mpiexec [-n <NoPROCESSES>] [-f <machine_file>] ./gameoflife -n <ROWS> -m <COLUMNS> -max <MAX_GENS> [-f <inputfile>]`
 
-Run MPI+OpenMP version:
-  * mpiexec \[-n \<NoPROCESSES>] \[-f \<machine_file>] ./gol -n \<ROWS> -m \<COLUMNS> -max \<MAX_GENS> -t \<threads> \[-f \<inputfile>]
+* MPI+OpenMP :
 
-In case input file is not given, matrix will be filled randomly.
+  `make mpi_openmp`
+
+  `cd mpi_openmp`
+
+  `mpiexec [-n <NoPROCESSES>] [-f <machine_file>] ./gameoflife -n <ROWS> -m <COLUMNS> -max <MAX_GENS> -t threads [-f <inputfile>]`
+
+### Notes
+
+* You may create your own *initial generation* using the `make grid` command.
+
+* In case no input file is given, the grid will be filled randomly.
+
+* [machines](./machines) file contains a list with entries of the following type `<machine_name>:<number_of_cores_to_be_used>`
