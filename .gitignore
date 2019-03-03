@@ -8,3 +8,7 @@ mpi_openmp/gameoflife
 
 aux/*.o
 aux/grid
+
+# ignore inputfile
+
+inputfile

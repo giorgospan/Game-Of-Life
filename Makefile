@@ -15,7 +15,7 @@ CC                = gcc
 FLAGS             = -g -O3
 
 # Auxialiary program
-grid:aux/grid
+grid:clean_aux aux/grid
 	@./aux/grid
 aux/grid:aux/grid_creator.o
 	$(CC) -o $@ $^
@@ -51,3 +51,7 @@ clean_mpi:
 .PHONY:clean_openmp
 clean_openmp:
 		rm -f $(MPI_OPENMP_OBJ) $(MPI_OPENMP_OUT)
+
+.PHONY:clean_aux
+clean_aux:
+				rm -f aux/grid aux/grid_creator.o

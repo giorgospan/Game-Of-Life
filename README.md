@@ -1,7 +1,7 @@
 # Game of Life
 
 ## About
-A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Wikipedia") . MPI is used in order to leverage the processing power of many machines(nodes) working in parallel. In addition, we incorporate OpenMP directives for parallelization of *for loops*,thus creating a hybrid *MPI+OpenMp* implementation of the game.
+A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Wikipedia") . MPI is used in order to leverage the processing power of many machines(nodes) working in parallel. In addition, we incorporate OpenMP directives for parallelization of *for loops*, thus creating a hybrid *MPI+OpenMp* implementation of the game.
 
 ## How to run
 
@@ -25,6 +25,10 @@ A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wi
 
 * You may create your own *initial generation* using the `make grid` command.
 
-* In case no input file is given, the grid will be filled randomly.
+* In case no `inputfile` is given, the grid will be filled randomly.
 
-* [machines](./machines) file contains a list with entries of the following type `<machine_name>:<number_of_cores_to_be_used>`
+* [machines](./machines) file contains a list with machine entries of the following format `<machine_name>:<number_of_cores_to_be_used>`
+
+
+## Speedup
+

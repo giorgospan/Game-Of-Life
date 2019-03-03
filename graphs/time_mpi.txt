@@ -1,0 +1,184 @@
+Number of Processes : 1
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.245 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.950 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 3.773 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 15.029 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 60.167 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 240.804 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 962.935 seconds
+
+Number of Processes : 2
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.160 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.616 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 2.378 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 9.661 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 37.588 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 154.818 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 604.790 seconds
+
+Number of Processes : 4
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.082 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.325 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 1.198 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 4.761 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 18.336 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 73.373 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 332.237 seconds
+
+Number of Processes : 6
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.225 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.350 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 0.958 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 3.500 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 12.666 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 52.006 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 192.875 seconds
+
+Number of Processes : 8
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.221 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.273 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 0.735 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 2.503 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 10.237 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 37.549 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 161.182 seconds
+
+Number of Processes : 10
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.316 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.344 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 0.646 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 2.052 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 8.340 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 30.150 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 117.690 seconds
+
+Number of Processes : 12
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.257 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.313 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 0.582 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 2.038 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 7.082 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 26.795 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 113.379 seconds
+
+Number of Processes : 16
+--------------------------------
+Grid Dimensions : 200 x 200
+Elapsed time    : 0.315 seconds
+
+Grid Dimensions : 400 x 400
+Elapsed time    : 0.375 seconds
+
+Grid Dimensions : 800 x 800
+Elapsed time    : 0.579 seconds
+
+Grid Dimensions : 1600 x 1600
+Elapsed time    : 1.408 seconds
+
+Grid Dimensions : 3200 x 3200
+Elapsed time    : 4.838 seconds
+
+Grid Dimensions : 6400 x 6400
+Elapsed time    : 19.113 seconds
+
+Grid Dimensions : 12800 x 12800
+Elapsed time    : 76.442 seconds
+
