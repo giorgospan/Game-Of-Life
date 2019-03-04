@@ -43,10 +43,10 @@ Game of Life offers a really high potential for scalability. Measuring the MPI's
 * Intel i5-6500 3.2 GHz, 4 cores, 4 threads
 * 16GB RAM
 
-[img not found](./graphs/MPI_Time_Graph.png)
+![img not found](./graphs/MPI_Time_Graph.png)
 
 
-[img not found](./graphs/speedup_efficiency.png)
+![img not found](graphs/speedup_efficiency.png)
 
 
 
