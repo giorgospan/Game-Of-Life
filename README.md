@@ -3,6 +3,12 @@
 ## About
 A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life "Wikipedia") . MPI is used in order to leverage the processing power of many machines(nodes) working in parallel. In addition, we incorporate OpenMP directives for parallelization of *for loops*, thus creating a hybrid *MPI+OpenMp* implementation of the game.
 
+## Implementation
+
+The main concept behind parallel implementation is splitting the *N x M* board into equally sized blocks. Each process is then assigned a single block to work on. Blocks might slightly differ in size in case an exact division of the board is not possible.
+
+Each process should be able to compute the inner part of the assigned block straight away. However computing the new generation values (0,1) for the 4 sides of the block cannot be done very easily. That is because, some of the border cells' neighbors do not reside in the block, belonging to another block. Consequently, inter-process communication (i.e: message passing) is required in order for the current process to compute the new values of the border cells.
+
 ## How to run
 
 * MPI only :
@@ -30,5 +36,20 @@ A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wi
 * [machines](./machines) file contains a list with machine entries of the following format `<machine_name>:<number_of_cores_to_be_used>`
 
 
-## Speedup
+## Benchmarking
+
+Game of Life offers a really high potential for scalability. Measuring the MPI's version execution time for high-dimensional grids, we noticed a very high speedup as well as sufficient efficiency. Our experiments were conducted in a LAN of PCs with identical specs and at most 2 processes per machine (see [machines](./machines)). Each one had the following specs:
+
+* Intel i5-6500 3.2 GHz, 4 cores, 4 threads
+* 16GB RAM
+
+[img not found](./graphs/MPI_Time_Graph.png)
+
+
+[img not found](./graphs/speedup_efficiency.png)
+
+
+
+
+
 
