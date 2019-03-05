@@ -7,7 +7,7 @@ A parallel implementation of [Conway's Game of Life](https://en.wikipedia.org/wi
 
 The main concept behind parallel implementation is splitting the *N x M* board into equally sized blocks. Each process is then assigned a single block to work on. Blocks might slightly differ in size in case an exact division of the board is not possible.
 
-Each process should be able to compute the inner part of the assigned block straight away. However computing the new generation values (0,1) for the 4 sides of the block cannot be done very easily. That is because, some of the border cells' neighbors do not reside in the block, belonging to another block. Consequently, inter-process communication (i.e: message passing) is required in order for the current process to compute the new values of the border cells.
+Each process should be able to compute the inner part of the assigned block straight away. However computing the new generation values (0,1) for the 4 sides of the block cannot be done very easily. That is because, the border cells have neighbors residing in another block. Consequently, inter-process communication (i.e: message passing) is required in order for the current process to fetch the values of those neighbors . 
 
 ## How to run
 
